@@ -1,0 +1,68 @@
+import java.util.*;
+class Student{
+    int age ;
+    String name;
+    
+    Student(int age , String name){
+        this.age=age;
+        this.name=name;
+        
+    }
+    
+    public String toString(){
+        return "Student , age"+this.age+" name "+this.name ;
+    }
+}
+
+
+public class Main
+{
+	public static void main(String[] args) {
+	    
+	    Comparator<Student> com= new Comparator<Student>(){
+	      
+	      public int compare(Student st1 , Student st2){
+	          if(st1.age> st2.age) return 1;
+	          else if(st1.age<st2.age) return -1;
+	          else return 0;
+	      }  
+	    };
+	
+	ArrayList<Student> list = new ArrayList<>();
+	list.add(new Student(5,"shailu1"));
+	list.add(new Student(2,"shailu2"));
+	list.add(new Student(3,"shailu3"));
+	list.add(new Student(1,"shailu4"));
+	
+	for(Student i : list)
+	System.out.println(i);
+	
+	
+	Collections.sort(list, com);
+	
+    System.out.println("--------");
+	
+	for(Student i : list)
+	System.out.println(i);
+	
+	
+	}
+}
+
+
+____________________________
+output of code ... 
+Student , age5 name shailu1
+Student , age2 name shailu2
+Student , age3 name shailu3
+Student , age1 name shailu4
+--------
+Student , age1 name shailu4
+Student , age2 name shailu2
+Student , age3 name shailu3
+Student , age5 name shailu1
+
+
+this is help to short according to it ... 
+https://youtu.be/ZA2oNhtNk3w?si=Qf4Ykp_O2YMKp-hA
+this is video link ...
